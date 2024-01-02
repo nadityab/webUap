@@ -35,8 +35,35 @@
     <label for="banyak">Banyak barang :</label>
     <input type="number" id="banyak" />
 
-    <button onclick="alert()">Submit</button>
+    <button id="submit">Submit</button>
 
     <div id="totalBelanja">Total :</div>
   </body>
+  <script>
+    const submit = document.getElementById("submit");
+    submit.addEventListener("click", hitung);
+    function hitung() {
+      const kode = document.getElementById("kode").value;
+      const banyakBarang = parseInt(document.getElementById("banyak").value);
+
+      let harga = 0;
+      switch (kode) {
+        case "1":
+          harga = 10000;
+          break;
+        case "2":
+          harga = 20000;
+          break;
+        case "3":
+          harga = 30000;
+          break;
+        default:
+          window.alert("Kode barang tidak Tersedia!");
+          return;
+      }
+
+      const totalHarga = harga * banyakBarang;
+      window.alert("Total pembayaran anda : " + totalHarga);
+    }
+  </script>
 </html>
