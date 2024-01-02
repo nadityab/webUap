@@ -36,13 +36,11 @@
     <input type="number" id="banyak" />
 
     <button id="submit">Submit</button>
-
-    <div id="totalBelanja">Total :</div>
   </body>
   <script>
     const submit = document.getElementById("submit");
-    submit.addEventListener("click", hitung);
-    function hitung() {
+    submit.addEventListener("click", count);
+    function count() {
       const kode = document.getElementById("kode").value;
       const banyakBarang = parseInt(document.getElementById("banyak").value);
 
